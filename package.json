@@ -1,7 +1,7 @@
 {
-  "name": "chupeta",
+  "name": "express-simple-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
     "test": "tsc && node dist/app.js",
     "build": "tsc"

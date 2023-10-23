@@ -28,9 +28,7 @@ app.get('/:path', cache, (req, res) => {
         const response = resultados[path];
         const currentETag = calculatETag(JSON.stringify(response));
         const requestETag = req.header('If-None-Match');
-        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1I2J3IO12J3OI12J31IO23J');
         if (requestETag == currentETag) {
-            console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1I2J3IO12J3OI12J31IO23J');
             res.status(304).end();
         }
         res.set('ETag', currentETag);
@@ -45,8 +43,7 @@ app.get('/:path/:id', cache, (req, res) => {
     if (response) {
         const currentETag = calculatETag(JSON.stringify(response));
         const requestETag = req.header('If-None-Match');
-        if (requestETag === currentETag) {
-            console.log('requestETagENTROU');
+        if (requestETag == currentETag) {
             res.status(304).end();
         }
         res.set('ETag', currentETag);
